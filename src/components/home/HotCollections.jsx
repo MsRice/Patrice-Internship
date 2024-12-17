@@ -1,14 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import CollectionItem from "./Collection-Item";
-// import "slick-carousel/slick/slick-theme.css"
-// import "slick-carousel/slick/slick.css"
-// import Slider from "react-slick";
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import 'keen-slider/keen-slider.min.css'
 import {useKeenSlider} from 'keen-slider/react'
 import { Link } from "react-router-dom";
-import sqare from '../../images/square-xxl.png'
 
 
 
@@ -41,14 +35,11 @@ const HotCollections = () => {
 
   async function getHotCollections(){
     const { data } = await axios.get('https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections')
-    console.log(typeof(data))
-
     setCollection(data)
     setLoading(false)
        
   }
   
-  console.log(collection)
 
  useEffect(() =>{
     getHotCollections()
@@ -73,7 +64,7 @@ const HotCollections = () => {
                 <div className="nft_wrap nft_wrap--loading">
                 </div>
                 <div className="nft_coll_pp">
-                    <div className="lazy nft_coll_pp--loading " src={sqare} alt=""></div>
+                    <div className="lazy nft_coll_pp--loading " alt=""></div>
                     <i className="fa fa-check"></i>
                 </div>
                 <div className="nft_coll_info--loading">
@@ -87,7 +78,7 @@ const HotCollections = () => {
                 <div className="nft_wrap nft_wrap--loading">
                 </div>
                 <div className="nft_coll_pp">
-                    <div className="lazy nft_coll_pp--loading " src={sqare} alt=""></div>
+                    <div className="lazy nft_coll_pp--loading " alt=""></div>
                     <i className="fa fa-check"></i>
                 </div>
                 <div className="nft_coll_info--loading">
@@ -101,7 +92,7 @@ const HotCollections = () => {
                 <div className="nft_wrap nft_wrap--loading">
                 </div>
                 <div className="nft_coll_pp">
-                    <div className="lazy nft_coll_pp--loading " src={sqare} alt=""></div>
+                    <div className="lazy nft_coll_pp--loading " alt=""></div>
                     <i className="fa fa-check"></i>
                 </div>
                 <div className="nft_coll_info--loading">
@@ -115,7 +106,7 @@ const HotCollections = () => {
                 <div className="nft_wrap nft_wrap--loading">
                 </div>
                 <div className="nft_coll_pp">
-                    <div className="lazy nft_coll_pp--loading " src={sqare} alt=""></div>
+                    <div className="lazy nft_coll_pp--loading " alt=""></div>
                     <i className="fa fa-check"></i>
                 </div>
                 <div className="nft_coll_info--loading">
@@ -130,8 +121,7 @@ const HotCollections = () => {
              <div settings className="keen-slider" ref={sliderRef}> 
         
               {collection?.map(element => 
-              <div className='keen-slider__slide col-lg-3 col-md-6 col-sm-6 col-xs-12'> 
-                {/* <CollectionItem key={element.id} element={element} />  */}
+              <div className='keen-slider__slide col-lg-3 col-md-6 col-sm-6 col-xs-12' key={element.id}> 
                 <div className="nft_coll">
                     <div className="nft_wrap">
                         <Link to="/item-details">
