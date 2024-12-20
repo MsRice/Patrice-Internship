@@ -13618,6 +13618,8 @@ a.read_more i {
   font-size: 14px;
 }
 
+
+
 .item_info .de_countdown {
   position: relative;
   display: inline-block;
@@ -15458,6 +15460,12 @@ img {
   animation: anim4 900ms linear infinite;
 }
 
+.de_countdown--loading{
+  background-color: rgba(160, 159, 159, .6) !important;
+  border: gray 2px solid !important;
+  color: gray !important;
+}
+
 @keyframes anim4 {
   to {
     transform: rotate(360deg);
@@ -16533,6 +16541,7 @@ img {
   #items-carousel-big .owl-next {
     top: 22.5%;
   }
+ 
 }
 
 /* -------------------------------------------------- 
