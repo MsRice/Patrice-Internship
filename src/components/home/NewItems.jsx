@@ -15,7 +15,6 @@ const NewItems = () => {
   async function getNewItems(){
     const { data } = await axios.get('https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems')
     setNewItems(data)
-    console.log(newItems)
 
     setLoading(false)
 
