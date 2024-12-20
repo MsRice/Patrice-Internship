@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from 'react';
 
 const Expiration = ({element}) => {
-    const [expirationDate , setExpirationDate] = useState(element.expiryDate)
+    const [loading , setLoading] = useState(false)
     let timeInMilliSec = element.expiryDate;
     let cancelID;
   
     const countdownCounter = document.querySelector(`.countdown__${element.id}`)
 
-
-
-
-      
     function updateCountdown(){
         
         let timeToExpirationInMilli = timeInMilliSec - Date.now()
         const expirationDuration = generateExpireDate(timeToExpirationInMilli)
-        
-        countdownCounter.innerHTML = expirationDuration 
-      }
 
-      setInterval(() =>{
+        if (loading){
+            countdownCounter.innerHTML = expirationDuration 
+
+        }
+    }
+    
+    setInterval(() =>{
         updateCountdown()
-      }, 1000)
+        setLoading(true)
+    }, 1000)
     
     function generateExpireDate(timeToExpirationInMilli){
-
+        
         let timeLeft = timeToExpirationInMilli  /1000
         let timer = timeToExpirationInMilli  /1000
         
@@ -57,13 +57,20 @@ const Expiration = ({element}) => {
             const expirationDuration = `${secondsLeft} s`
             return expirationDuration
         }       
-        
+
       
     }
 
     return (
         <>
+        {!loading ? 
+        <span>
+            --:--:--
 
+        </span>
+        :
+        null
+        }
         </>
     );
 }
