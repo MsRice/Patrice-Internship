@@ -99,7 +99,7 @@ const NewItems = () => {
   </div>
   <div className="nft__item_info">
       <h4 className="nft_coll_info--sub-loading">Polin</h4>
-    <div className="nft_coll_info--sub-loading">5.09 ETH</div>
+    <div className="nft_coll_info--sub-loading">3.02 ETH</div>
     <div className="nft__item_like">
       <i className="fa fa-heart"></i>
       <span>--</span>
