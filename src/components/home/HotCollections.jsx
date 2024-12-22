@@ -3,6 +3,10 @@ import axios from "axios";
 import 'keen-slider/keen-slider.min.css'
 import {useKeenSlider} from 'keen-slider/react'
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import 'aos/dist/aos.css';
+
+Aos.init();
 
 
 
@@ -48,7 +52,7 @@ const HotCollections = () => {
   return (
     <section id="section-collections" className="no-bottom">
       <div className="container">
-        <div className="row">
+        <div className="row" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
           <div className="col-lg-12">
             <div className="text-center">
               <h2>Hot Collections</h2>
