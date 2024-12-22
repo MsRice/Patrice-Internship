@@ -2,7 +2,10 @@ import React from "react";
 import NFT from "../../images/nft.png";
 import backgroundImage from "../../images/bg-shape-1.jpg";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
+Aos.init();
 const Landing = () => {
   return (
     <section
@@ -14,7 +17,7 @@ const Landing = () => {
     >
       <div className="v-center">
         <div className="container">
-          <div className="row align-items-center">
+          <div className="row align-items-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <div className="col-md-6">
               <div className="spacer-single"></div>
               <h6>
