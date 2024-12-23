@@ -41,7 +41,7 @@ const LandingIntro = () => {
                 <h4 className="">Sell your NFT's</h4>
                 <p>
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem.
+                  accusantium doloremque laudantium, totam remdem.
                 </p>
               </div>
               <i className="wm icon_tags_alt"></i>
